@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "4"
+sudo: true
+before_deploy: npm install -g cf-blue-green
+deploy:
+  provider: script
+  script: npm install
+  on:
+    branch: master
+    repo: lionelmace/travis-ci
