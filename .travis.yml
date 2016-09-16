@@ -10,8 +10,9 @@ deploy:
     branch: master
     repo: lionelmace/travis-ci
 env:
-  - CF_API=https://api.eu-gb.bluemix.net
-  - CF_ORGANIZATION=org-ibm
-  - CF_SPACE=demo
-  - CF_APP=travis-ci
-  - CF_USERNAME=lionel.mace@fr.ibm.com
+  global:
+    - CF_API=https://api.eu-gb.bluemix.net
+    - CF_ORGANIZATION=org-ibm
+    - CF_SPACE=demo
+    - CF_APP=travis-ci
+    - CF_USERNAME=lionel.mace@fr.ibm.com
