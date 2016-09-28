@@ -25,6 +25,7 @@ deploy:
   organization: org-ibm
   space: demo
   username: lionel.mace@fr.ibm.com
+  password: ${CF_PASSWORD}
   on:
     branch: master
     repo: lionelmace/travis-ci
