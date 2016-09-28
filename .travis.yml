@@ -18,8 +18,9 @@ node_js:
 #    - CF_USERNAME=lionel.mace@fr.ibm.com
 
 deploy:
+  # Proper CloudFoundry support included only in the edge version of Travis
   edge: true
-  skip_cleanup: true
+  #skip_cleanup: true
   provider: cloudfoundry
   api: https://api.eu-gb.bluemix.net
   organization: org-ibm
