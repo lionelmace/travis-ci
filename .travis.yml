@@ -1,32 +1,32 @@
 language: node_js
 node_js:
   - "4"
-sudo: true
-before_deploy: npm install -g cf-blue-green
-deploy:
-  provider: script
-  script: cf-blue-green-travis
-  on:
-    branch: master
-    repo: lionelmace/travis-ci
-env:
-  global:
-    - CF_API=https://api.eu-gb.bluemix.net
-    - CF_ORGANIZATION=org-ibm
-    - CF_SPACE=demo
-    - CF_APP=travis-ci
-    - CF_USERNAME=lionel.mace@fr.ibm.com
-
+#sudo: true
+#before_deploy: npm install -g cf-blue-green
 #deploy:
-  # Proper CloudFoundry support included only in the edge version of Travis
-#  edge: true
-  #skip_cleanup: true
-#  provider: cloudfoundry
-#  api: https://api.eu-gb.bluemix.net
-#  organization: org-ibm
-#  space: demo
-#  username: lionel.mace@fr.ibm.com
-#  password: ${CF_PASSWORD}
+#  provider: script
+#  script: cf-blue-green-travis
 #  on:
 #    branch: master
 #    repo: lionelmace/travis-ci
+#env:
+#  global:
+#    - CF_API=https://api.eu-gb.bluemix.net
+#    - CF_ORGANIZATION=org-ibm
+#    - CF_SPACE=demo
+#    - CF_APP=travis-ci
+#    - CF_USERNAME=lionel.mace@fr.ibm.com
+
+deploy:
+  # Proper CloudFoundry support included only in the edge version of Travis
+  edge: true
+  #skip_cleanup: true
+  provider: cloudfoundry
+  api: https://api.eu-gb.bluemix.net
+  organization: org-ibm
+  space: demo
+  username: lionel.mace@fr.ibm.com
+  password: ${CF_PASSWORD}
+  on:
+    branch: master
+    repo: lionelmace/travis-ci
